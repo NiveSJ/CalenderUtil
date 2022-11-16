@@ -1,8 +1,11 @@
 package se.lexicon;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public enum Months {
     JANUARY(31),
-    FEBRUARY(29),
+    FEBRUARY(28),
     MARCH(31),
     APRIL(30),
     MAY(31),
@@ -14,7 +17,7 @@ public enum Months {
     NOVEMBER(30),
     DECEMBER(31);
 
-    private int day;
+    private  int day;
 
     Months(int day) {
         this.day = day;

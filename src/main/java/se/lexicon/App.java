@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 
 import static java.util.Calendar.DAY_OF_WEEK;
@@ -27,12 +29,16 @@ public class App {
         System.out.println(cal.getTime());  //30 dec
 
         cal.add(Calendar.DATE, 1);  // Increment one day   31 dec
-
+        int count = 1;
 
         System.out.println("___________________________");
         for (Months mon : Months.values()) {
+
+
             dayLen = mon.getDay();
-            System.out.println("###" + mon + "###");
+
+            System.out.println("\n###" + mon + "###");
+
 
             cal.add(Calendar.DATE, 1); // jan 1
             String str = String.valueOf(cal.getTime());
@@ -41,51 +47,65 @@ public class App {
             System.out.println(cal.getTime());
 
 
-            System.out.println("M" + "\t" + "T" + "\t" + "W" + "\t" + "T" + "\t" + "F" + "\t" + "S" + "\t" + "SU");
+            System.out.print("M" + "\t" + "T" + "\t" + "W" + "\t" + "T" + "\t" + "F" + "\t" + "S" + "\t" + "SU");
+            System.out.print("\t" + "M" + "\t" + "T" + "\t" + "W" + "\t" + "T" + "\t" + "F" + "\t" + "S" + "\t" + "SU");
+            System.out.print("\t" + "M" + "\t" + "T" + "\t" + "W" + "\t" + "T" + "\t" + "F" + "\t" + "S" + "\t" + "SU");
+            System.out.print("\t" + "M" + "\t" + "T" + "\t" + "W" + "\t" + "T" + "\t" + "F" + "\t" + "S" + "\t" + "SU");
+            System.out.print("\t" + "M" + "\t" + "T" + "\t" + "W" + "\t" + "T" + "\t" + "F" + "\t" + "S" + "\t" + "SU");
+            System.out.println("\n");
 
-
+            int k = 0;
             switch (str1) {
                 case "Mon":
                     System.out.print(cal.get(5) + "\t");
                     break;
                 case "Tue":
+                    k = 6;
                     System.out.print(" " + "\t" + cal.get(5) + "\t");
                     break;
                 case "Wed":
+                    k = 5;
                     System.out.print(" " + "\t" + " " + "\t" + cal.get(5) + "\t");
                     break;
                 case "Thu":
+                    k = 4;
                     System.out.print(" " + "\t" + " " + "\t" + " " + "\t" + cal.get(5) + "\t");
                     break;
                 case "Fri":
+                    k = 3;
                     System.out.print(" " + "\t" + " " + "\t" + " " + "\t" + " " + "\t" + cal.get(5) + "\t");
                     break;
                 case "Sat":
+                    k = 2;
                     System.out.print(" " + "\t" + " " + "\t" + " " + "\t" + " " + "\t" + " " + "\t" + cal.get(5) + "\t");
                     break;
                 case "Sun":
+                    k = 1;
                     System.out.print(" " + "\t" + " " + "\t" + " " + "\t" + " " + "\t" + " " + "\t" + " " + "\t" + cal.get(5) + "\t");
                     break;
 
             }
 
-            for (int i = 2; i <= dayLen; i++) {
+            for (int i = 1; i < dayLen; i++) {
+
 
                 cal.add(Calendar.DATE, 1);
                 System.out.print(cal.get(5) + "\t");
-             /*   String week = String.valueOf(cal.getTime());
-                String week1 = str.substring(0, 3);
-                if(week1 == "Sun")
-                    System.out.println("\n");*/
 
 
-                if (i == 7 || i == 14 || i == 21 || i == 28)
-                    System.out.println("\n");
             }
-
-            System.out.println(cal.getTime());
 
 
         }
+
     }
+
+
 }
+
+
+
+
+
+
+
